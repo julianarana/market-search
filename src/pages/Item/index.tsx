@@ -1,8 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useMemo } from 'react';
 import classnames from 'classnames/bind';
 import { useParams } from 'react-router-dom';
-import { Page, Button } from '../../components';
+import { Page, Button, ButtonStyle } from '../../components';
 import { useItem } from '../../Store/useItem';
+import { formatPrice } from '../../utils';
 import styles from './ItemPage.module.scss';
 
 const cx = classnames.bind(styles);
@@ -10,7 +11,14 @@ const cx = classnames.bind(styles);
 const ItemPage = (): ReactElement => {
   const { id } = useParams();
   const { loading, data, error } = useItem(id);
-  console.log('this is the id', id, data);
+
+  const [integerAmount, decimalAmount] = useMemo(() => {
+    if (data?.item?.price.amount) {
+      return formatPrice(data?.item.price.amount);
+    }
+    return ['', ''];
+  }, [data?.item.price.amount]);
+
   return (
     <>
       <Page>
@@ -18,15 +26,31 @@ const ItemPage = (): ReactElement => {
           {data && (
             <>
               <div className={cx('itemPage__details')}>
-                <img src={data.item.picture} alt={data.item.title} />
+                <img
+                  className={cx('itemPage__img')}
+                  src={data.item.picture}
+                  alt={data.item.title}
+                />
                 <h1>Descripción del producto</h1>
-                <div>{data.description}</div>
+                <div className={cx('itemPage__description')}>
+                  {data.description}
+                </div>
               </div>
               <div className={cx('itemPage__summary')}>
-                <div>{data.item.condition} - {/*data.item*/} vendidos</div>
-                <h1>{data.item.title}</h1>
-                <div>{'$'}{data.item.price.amount}</div>
-                <Button>Comprar</Button>
+                <div>
+                  {data.item.condition === 'new' ? 'Nuevo': ''} - {/*data.item*/} vendidos
+                </div>
+                <h2>{data.item.title}</h2>
+                <div className={cx('itemPage__price')}>
+                  {'$ '}{integerAmount}<sup>{decimalAmount}</sup>
+                </div>
+                <Button
+                  className={cx('itemPage__button')}
+                  fullWidth
+                  buttonStyle={ButtonStyle.ACTION}
+                >
+                  Comprar
+                </Button>
               </div>
             </>
           )}

@@ -18,7 +18,6 @@ export const useItem = (id: string): StoreItem => {
   useEffect(() => {
     getItem(id)
       .then((response: DataResponse<ItemResponse>): void => {
-          console.log("Finally a response", response);
         setState((oldState) => ({
           ...oldState,
           loading: false,

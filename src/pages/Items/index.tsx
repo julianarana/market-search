@@ -18,7 +18,7 @@ const ItemsPage = (): ReactElement => {
 
   return (
     <Page>
-      <ItemList items={data.items} onItemClicked={handleItemClicked} />
+      {data && <ItemList items={data.items} onItemClicked={handleItemClicked} />}
     </Page>
   );
 };

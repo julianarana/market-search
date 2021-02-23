@@ -1,5 +1,7 @@
+@import '../../../styles/definitions.scss';
+
 .panel {
   background: var(--color-white);
   margin: auto;
-  max-width: 1200px;
+  max-width: $max-body-width;
 }

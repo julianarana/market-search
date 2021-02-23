@@ -8,8 +8,31 @@
     width: 70%;
   }
 
+  &__img {
+    display: block;
+    margin: auto;
+  }
+
   &__summary {
     padding: 1rem;
     width: 30%;
+  }
+
+  &__button {
+    margin-top: 2rem;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+  }
+
+  &__price {
+    font-size: 3rem;
+    color: var(--color-dark);
+
+    sup {
+      font-size: 1.2rem;
+    }
   }
 }

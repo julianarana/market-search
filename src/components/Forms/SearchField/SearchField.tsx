@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, ReactElement, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, useState } from 'react';
 import classnames from 'classnames/bind';
 import { IconType } from '../../Icon';
 import { Button } from '../Button';
@@ -28,6 +28,12 @@ export const SearchField = ({
     onSearch(value);
   };
 
+  const handleKeyPress = (event?: KeyboardEvent<HTMLInputElement>): void => {
+    if(event.key === 'Enter') {
+      onSearch(value);
+    }
+  }
+
   return (
     <div className={cx('searchField')}>
       <TextField
@@ -36,6 +42,7 @@ export const SearchField = ({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
+        onKeyPress={handleKeyPress}
       />
       <Button
         className={cx('searchField__search')}

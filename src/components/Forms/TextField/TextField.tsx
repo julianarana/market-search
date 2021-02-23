@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, ReactElement } from 'react';
+import React, { ChangeEvent, KeyboardEvent, ReactElement } from 'react';
 import classnames from 'classnames/bind';
 import styles from './TextField.module.scss';
 
@@ -8,6 +8,7 @@ interface TextFieldProps {
   className?: string;
   fullWidth?: boolean;
   onChange?: (value: string) => void;
+  onKeyPress?: (event?: KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string;
   value?: string;
 }
@@ -16,6 +17,7 @@ export const TextField = ({
   className,
   fullWidth,
   onChange,
+  onKeyPress,
   placeholder,
   value,
 }: TextFieldProps): ReactElement => {
@@ -30,6 +32,7 @@ export const TextField = ({
     <input
       className={cx('textField', { fullWidth }, className)}
       onChange={handleChange}
+      onKeyPress={onKeyPress}
       placeholder={placeholder}
       type="text"
       value={value}

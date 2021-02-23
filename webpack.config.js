@@ -1,6 +1,5 @@
 var path = require("path");
 function buildConfig(env) {
-  console.log("ENV", env);
   if (env === "dev" || env === "prod") {
     return require("./config/webpack/webpack." + env + ".config.js");
   } else {

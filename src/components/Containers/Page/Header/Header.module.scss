@@ -1,10 +1,27 @@
+@import '../../../../styles/definitions.scss';
+
 .header {
   background: var(--color-primary);
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+
+  &__content {
+    display: flex;
+    margin: auto;
+    width: $max-body-width;
+  }
+
+  &__logo {
+    margin-right: 1rem;
+    width: fit-content;
+
+    img {
+      height: 2.5rem;
+    }
+  }
 
   &__search {
-    width: 60%;
+    width: 100%;
   }
 }

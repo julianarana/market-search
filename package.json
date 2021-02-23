@@ -4,8 +4,10 @@
   "description": "Challenge for Mercadolibre",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --env=dev",
+    "dev": "yarn server && yarn front",
     "build": "webpack --mode production --env=prod",
+    "front": "webpack serve --env=dev",
+    "server": "nodemon -r ./src/server/server.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -13,6 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
@@ -36,6 +41,7 @@
     "image-webpack-loader": "^7.0.1",
     "jest": "^26.6.3",
     "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",

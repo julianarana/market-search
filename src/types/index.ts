@@ -18,3 +18,15 @@ export interface Item {
   price: Price;
   title: string;
 }
+
+export interface ItemResponse {
+  author?: Author;
+  description?: string;
+  item: Item;
+}
+
+export interface ItemsResponse {
+  author?: Author;
+  categories?: string[];
+  items: Item[];
+}

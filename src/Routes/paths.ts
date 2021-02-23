@@ -4,6 +4,10 @@ export const PATHS = {
   search: '/',
 };
 
-export const buildItemPath = (searchValue: string): string => {
+export const buildItemsPath = (searchValue: string): string => {
   return `${PATHS.items}?search=${encodeURIComponent(searchValue)}`;
+};
+
+export const buildItemPath = (id: string): string => {
+  return PATHS.item.replace(':id', id);
 };

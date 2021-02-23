@@ -1,9 +1,10 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Header } from './Header';
 import classnames from 'classnames/bind';
+import { Header } from './Header';
+import { Panel } from '../Panel';
+import { buildItemsPath } from '../../../Routes/paths';
 import styles from './Page.module.scss';
-import { buildItemPath } from '../../../Routes/paths';
 
 const cx = classnames.bind(styles);
 
@@ -13,13 +14,15 @@ export const Page = ({
   const { push } = useHistory();
   const handleSearch = (value: string): void => {
     if (value) {
-      push(buildItemPath(value));
+      push(buildItemsPath(value));
     }
   };
   return (
     <div className={cx('page')}>
       <Header className={cx('page__header')} onSearch={handleSearch} />
-      <div className={cx('page__content')}>{children}</div>
+      <div className={cx('page__content')}>
+        {children && <Panel>{children}</Panel>}
+      </div>
     </div>
   );
 };

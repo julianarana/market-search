@@ -1,0 +1,14 @@
+.searchField {
+  display: flex;
+
+  &__text {
+
+  }
+
+  &__search {
+    background: var(--color-light);
+    display: block;
+    height: 100%;
+    max-width: 50px;
+  }
+}

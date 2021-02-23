@@ -21,6 +21,9 @@ const config = {
     rules: [{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' }],
   },
   plugins: [htmlPlugin],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 module.exports = config;

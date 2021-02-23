@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import './colors.scss';
+
+* {
+  box-sizing: border-box;
+}
 
 body,
 html {
-  background: #fff;
+  background: var(--color-light);
   font-family: 'Robot', sans-serif;
   margin: 0;
   padding: 0;
@@ -10,4 +15,10 @@ html {
 
 *:focus {
   outline: none;
+}
+
+.app {
+  height: 100%;
+  padding: 0;
+  width: 100%;
 }

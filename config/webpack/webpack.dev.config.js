@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-console.log('dev elop');
+
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
 });
@@ -12,6 +12,15 @@ const config = {
   },
   module: {
     rules: [
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
+      },
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
         test: /\.css$/,
@@ -57,6 +66,13 @@ const config = {
     ],
   },
   plugins: [htmlPlugin],
+
+  devServer: {
+    historyApiFallback: true,
+  },
+  output: {
+    publicPath: '/',
+  }
 };
 
 module.exports = config;

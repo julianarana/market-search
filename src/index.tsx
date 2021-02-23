@@ -5,7 +5,7 @@ import styles from './styles/index.scss';
 
 const Index = () => {
   return (
-    <div className={styles.test}>
+    <div className={styles.app}>
       <App />
     </div>
   );

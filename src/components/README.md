@@ -13,5 +13,6 @@ Para esta aplicación se dividieron los componentes en dos grandes subcategoría
 1. `Forms`: Contiene los elementos que son usados para despegar formularios. En el caso de la aplicación construimos un `Button`, un `SearchField` (que despliega la barra de búsqueda de la parte superior de la pantalla) y un `TextField` cuyo único propósito en este proyecto es desplegar un input controlado.
 
 ## Documentación adicional
-1. [Documentación del component Panel](./Containers/Panel)
-1. [Documentación del component Page](./Containers/Page)
+1. [Component Panel](./Containers/Panel)
+1. [Component Page](./Containers/Page)
+1. [Component ItemList](./Containers/ItemList)

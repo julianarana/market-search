@@ -2,7 +2,9 @@ import React, { KeyboardEvent, ReactElement, useState } from 'react';
 import classnames from 'classnames/bind';
 import { Button } from '../Button';
 import { TextField } from '../TextField';
+import { IconType } from '../../Icon';
 import styles from './SearchField.module.scss';
+
 
 const cx = classnames.bind(styles);
 
@@ -46,6 +48,7 @@ export const SearchField = ({
       <Button
         className={cx('searchField__search')}
         onClick={handleSearch}
+        icon={IconType.SEARCH}
       />
     </div>
   );

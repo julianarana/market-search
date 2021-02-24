@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import classname from 'classnames/bind';
+import { Icon, IconType } from '../../Icon';
 import styles from './Button.module.scss';
 
 const cx = classname.bind(styles);
@@ -13,6 +14,7 @@ interface ButtonProps {
   buttonStyle?: ButtonStyle;
   className?: string;
   fullWidth?: boolean;
+  icon?: IconType;
   onClick?: () => void;
 }
 
@@ -20,6 +22,7 @@ export const Button = ({
   buttonStyle,
   children,
   className,
+  icon,
   fullWidth,
   onClick,
 }: PropsWithChildren<ButtonProps>): ReactElement => {
@@ -34,6 +37,7 @@ export const Button = ({
       onClick={onClick}
     >
       {children}
+      {icon!== undefined && <Icon type={icon} />}
     </button>
   );
 };

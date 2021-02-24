@@ -1,6 +1,5 @@
 import React, { KeyboardEvent, ReactElement, useState } from 'react';
 import classnames from 'classnames/bind';
-import { IconType } from '../../Icon';
 import { Button } from '../Button';
 import { TextField } from '../TextField';
 import styles from './SearchField.module.scss';
@@ -46,7 +45,6 @@ export const SearchField = ({
       />
       <Button
         className={cx('searchField__search')}
-        iconType={IconType.SEARCH}
         onClick={handleSearch}
       />
     </div>

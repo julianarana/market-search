@@ -2,7 +2,7 @@
 
 El proyecto hace parte de la prueba técnica para Mercado Libre. Se divide en dos partes fundamentales:
 
-1. FrontEnd construido en React con Typescript
+1. FrontEnd construido en React con Typescript.
 2. Backend construido en nodejs.
 
 ## Prerequisitos
@@ -16,8 +16,7 @@ El proyecto hace parte de la prueba técnica para Mercado Libre. Se divide en do
 Dado que el proyecto incluye dos partes, el frontend y el backend, ambos deben 
 
 1. Clone on localhost.
-2. Correr el comando `yarn install` o `npm install`.
-
+2. Correr el comando `yarn start`. Este comando correrá ambas aplicaciones al tiempo.
 
 ## Distribución general de la aplicación
 

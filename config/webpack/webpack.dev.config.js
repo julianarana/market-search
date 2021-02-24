@@ -66,7 +66,6 @@ const config = {
     ],
   },
   plugins: [htmlPlugin],
-
   devServer: {
     historyApiFallback: true,
   },

@@ -21,6 +21,7 @@ export const TextField = ({
   placeholder,
   value,
 }: TextFieldProps): ReactElement => {
+  
   const handleChange = (event?: ChangeEvent<HTMLInputElement>) => {
     const { value } = event?.target;
     if (onChange) {
@@ -31,6 +32,7 @@ export const TextField = ({
   return (
     <input
       className={cx('textField', { fullWidth }, className)}
+      data-testid="input"
       onChange={handleChange}
       onKeyPress={onKeyPress}
       placeholder={placeholder}

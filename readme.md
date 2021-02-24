@@ -18,6 +18,8 @@ Dado que el proyecto incluye dos partes, el frontend y el backend, ambos deben
 1. Clone on localhost.
 2. Correr el comando `yarn start`. Este comando correrá ambas aplicaciones al tiempo.
 
+Para correr las pruebas unitarias `yarn test`
+
 ## Distribución general de la aplicación
 
 La aplicación está estructurada de manera lógica en varias folders que tienen un propósito específico y que se describe de manera general en la documentación de cada folder. 

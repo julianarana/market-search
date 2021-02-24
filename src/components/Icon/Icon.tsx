@@ -15,7 +15,7 @@ interface IconProps {
 
 export const Icon = ({ type }: IconProps): ReactElement => {
   return (
-    <div className={cx('icon')}>
+    <div className={cx('icon')} data-testid="icon">
       {type === IconType.SEARCH && <img src={search} alt="search" />}
     </div>
   );

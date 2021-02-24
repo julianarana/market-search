@@ -1,7 +1,3 @@
-//import { Config } from '@jest/types';
-
-//setConfig({ publicRuntimeConfig });
-
 module.exports = {
   roots: ['<rootDir>'],
   modulePaths: ['<rootDir>'],

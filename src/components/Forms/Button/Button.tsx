@@ -35,9 +35,10 @@ export const Button = ({
         className
       )}
       onClick={onClick}
+      data-testid="button"
     >
       {children}
-      {icon!== undefined && <Icon type={icon} />}
+      {icon !== undefined && <Icon type={icon} />}
     </button>
   );
 };
